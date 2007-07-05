@@ -3,7 +3,7 @@
 Summary: DejaVu ttf Fonts
 Name: fonts-ttf-dejavu
 Version: 2.17
-Release: %mkrel 1
+Release: %mkrel 2
 License: Bitstream Vera Fonts Copyright
 Group: System/Fonts/True type
 URL: http://dejavu.sourceforge.net/
@@ -11,8 +11,6 @@ Source0: http://prdownloads.sourceforge.net/dejavu/dejavu-ttf-%{version}.tar.bz2
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 Requires(post): fontconfig 
 Requires(postun): fontconfig 
-Requires(post): chkfontpath
-Requires(postun): chkfontpath
 BuildArch: noarch
 BuildRequires: freetype-tools
 
@@ -46,17 +44,18 @@ install -m 644 *.ttf $RPM_BUILD_ROOT%{_datadir}/fonts/TTF/dejavu
 ttmkfdir $RPM_BUILD_ROOT%{_datadir}/fonts/TTF/dejavu > $RPM_BUILD_ROOT%{_datadir}/fonts/TTF/dejavu/fonts.dir
 ln -s fonts.dir $RPM_BUILD_ROOT%{_datadir}/fonts/TTF/dejavu/fonts.scale
 
+mkdir -p %{buildroot}%_sysconfdir/X11/fontpath.d/
+ln -s ../../..%_datadir/fonts/TTF/dejavu \
+	%{buildroot}%_sysconfdir/X11/fontpath.d/dejavu:pri=50
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %post
-[ -x %{_sbindir}/chkfontpath ] && %{_sbindir}/chkfontpath -q -a %{_datadir}/fonts/TTF/dejavu
-[ -x %{_bindir}/fc-cache ] && %{_bindir}/fc-cache 
+fc-cache
 
 %postun
 if [ "$1" = "0" ]; then
-  [ -x %{_sbindir}/chkfontpath ] && %{_sbindir}/chkfontpath -q -r %{_datadir}/fonts/TTF/dejavu
-  [ -x %{_bindir}/fc-cache ] && %{_bindir}/fc-cache 
+fc-cache
 fi
 
 
@@ -67,3 +66,4 @@ fi
 %{_datadir}/fonts/TTF/dejavu/*.ttf
 %verify(not mtime) %{_datadir}/fonts/TTF/dejavu/fonts.dir
 %{_datadir}/fonts/TTF/dejavu/fonts.scale
+%{_sysconfdir}/X11/fontpath.d/dejavu:pri=50
