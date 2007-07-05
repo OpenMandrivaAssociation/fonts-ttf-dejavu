@@ -3,7 +3,7 @@
 Summary: DejaVu ttf Fonts
 Name: fonts-ttf-dejavu
 Version: 2.17
-Release: %mkrel 2
+Release: %mkrel 3
 License: Bitstream Vera Fonts Copyright
 Group: System/Fonts/True type
 URL: http://dejavu.sourceforge.net/
@@ -46,7 +46,7 @@ ln -s fonts.dir $RPM_BUILD_ROOT%{_datadir}/fonts/TTF/dejavu/fonts.scale
 
 mkdir -p %{buildroot}%_sysconfdir/X11/fontpath.d/
 ln -s ../../..%_datadir/fonts/TTF/dejavu \
-	%{buildroot}%_sysconfdir/X11/fontpath.d/dejavu:pri=50
+	%{buildroot}%_sysconfdir/X11/fontpath.d/ttf-dejavu:pri=50
 %clean
 rm -rf $RPM_BUILD_ROOT
 
@@ -66,4 +66,4 @@ fi
 %{_datadir}/fonts/TTF/dejavu/*.ttf
 %verify(not mtime) %{_datadir}/fonts/TTF/dejavu/fonts.dir
 %{_datadir}/fonts/TTF/dejavu/fonts.scale
-%{_sysconfdir}/X11/fontpath.d/dejavu:pri=50
+%{_sysconfdir}/X11/fontpath.d/ttf-dejavu:pri=50
