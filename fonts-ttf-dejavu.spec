@@ -36,19 +36,19 @@ FontForge - http://fontforge.sf.net/) and in compiled form as TTF files
 %build
 
 %install
-rm -rf $RPM_BUILD_ROOT
+rm -rf %{buildroot}
 
-mkdir -p $RPM_BUILD_ROOT%{_datadir}/fonts/TTF/dejavu
+mkdir -p %{buildroot}%{_datadir}/fonts/TTF/dejavu
 
-install -m 644 *.ttf $RPM_BUILD_ROOT%{_datadir}/fonts/TTF/dejavu
-ttmkfdir $RPM_BUILD_ROOT%{_datadir}/fonts/TTF/dejavu > $RPM_BUILD_ROOT%{_datadir}/fonts/TTF/dejavu/fonts.dir
-ln -s fonts.dir $RPM_BUILD_ROOT%{_datadir}/fonts/TTF/dejavu/fonts.scale
+install -m 644 *.ttf %{buildroot}%{_datadir}/fonts/TTF/dejavu
+ttmkfdir %{buildroot}%{_datadir}/fonts/TTF/dejavu > %{buildroot}%{_datadir}/fonts/TTF/dejavu/fonts.dir
+ln -s fonts.dir %{buildroot}%{_datadir}/fonts/TTF/dejavu/fonts.scale
 
 mkdir -p %{buildroot}%_sysconfdir/X11/fontpath.d/
 ln -s ../../..%_datadir/fonts/TTF/dejavu \
 	%{buildroot}%_sysconfdir/X11/fontpath.d/ttf-dejavu:pri=50
 %clean
-rm -rf $RPM_BUILD_ROOT
+rm -rf %{buildroot}
 
 %post
 fc-cache
@@ -57,7 +57,6 @@ fc-cache
 if [ "$1" = "0" ]; then
 fc-cache
 fi
-
 
 %files
 %defattr(-,root,root,-)
