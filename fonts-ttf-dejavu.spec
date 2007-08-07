@@ -15,14 +15,14 @@ BuildArch: noarch
 BuildRequires: freetype-tools
 
 %description
-DejaVu fonts are Bitstream Vera fonts (http://www.bitstream.com/) with
-additional characters from Latin Extended-A set (Dcaron, dcaron, Ecaron,
-ecaron, Lacute, lacute, Lcaron, lcaron, Ncaron, ncaron, Racute, racute,
-Rcaron, rcaron, Tcaron, tcaron, Uring, uring). They are optimized for
-display on Linux/X (which has some TrueType display problems), but that
-should not affect their usability on other systems or in printing.
-
-DejaVu fonts are based on Bitstream Vera fonts version 1.10.
+The DejaVu fonts are modifications of the Bitstream Vera fonts designed 
+to extend this original for greater coverage of Unicode. The Bitstream Vera 
+family was limited mainly to the characters in the Basic Latin and Latin-1 
+Supplement portions of Unicode (roughly equivalent to ISO-8859-15) but was 
+released with a license that permitted changes. The DejaVu fonts project was 
+started with the aim to "provide a wider range of characters... while 
+maintaining the original look and feel through the process of collaborative 
+development".
 
 Fonts are (c) Bitstream (see below). DejaVu changes are in public domain.
 
