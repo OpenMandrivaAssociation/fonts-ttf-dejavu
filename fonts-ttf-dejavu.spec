@@ -24,12 +24,6 @@ started with the aim to "provide a wider range of characters... while
 maintaining the original look and feel through the process of collaborative 
 development".
 
-Fonts are (c) Bitstream (see below). DejaVu changes are in public domain.
-
-Fonts are published in source form as SFD files (Spline Font Database from
-FontForge - http://fontforge.sf.net/) and in compiled form as TTF files
-(TrueType fonts).
-
 %prep
 %setup -q -n %{pkgname}-%{version}
 
