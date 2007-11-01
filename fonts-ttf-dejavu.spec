@@ -2,7 +2,7 @@
 
 Summary: DejaVu ttf Fonts
 Name: fonts-ttf-dejavu
-Version: 2.20
+Version: 2.21
 Release: %mkrel 1
 License: Bitstream Vera Fonts Copyright
 Group: System/Fonts/True type
@@ -38,9 +38,9 @@ install -m 644 *.ttf %{buildroot}%{_datadir}/fonts/TTF/dejavu
 ttmkfdir %{buildroot}%{_datadir}/fonts/TTF/dejavu > %{buildroot}%{_datadir}/fonts/TTF/dejavu/fonts.dir
 ln -s fonts.dir %{buildroot}%{_datadir}/fonts/TTF/dejavu/fonts.scale
 
-mkdir -p %{buildroot}%_sysconfdir/X11/fontpath.d/
-ln -s ../../..%_datadir/fonts/TTF/dejavu \
-	%{buildroot}%_sysconfdir/X11/fontpath.d/ttf-dejavu:pri=50
+mkdir -p %{buildroot}%{_sysconfdir}/X11/fontpath.d/
+ln -s ../../..%{_datadir}/fonts/TTF/dejavu \
+	%{buildroot}%{_sysconfdir}/X11/fontpath.d/ttf-dejavu:pri=50
 %clean
 rm -rf %{buildroot}
 
