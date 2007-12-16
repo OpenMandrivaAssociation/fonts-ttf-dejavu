@@ -1,13 +1,13 @@
-%define pkgname dejavu-ttf
+%define pkgname dejavu-fonts-ttf
 
 Summary: DejaVu ttf Fonts
 Name: fonts-ttf-dejavu
-Version: 2.21
+Version: 2.22
 Release: %mkrel 1
 License: Bitstream Vera Fonts Copyright
 Group: System/Fonts/True type
 URL: http://dejavu.sourceforge.net/
-Source0: http://prdownloads.sourceforge.net/dejavu/dejavu-ttf-%{version}.tar.bz2
+Source0: http://prdownloads.sourceforge.net/dejavu/%{pkgname}-%{version}.tar.bz2
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 Requires(post): fontconfig 
 Requires(postun): fontconfig 
@@ -34,7 +34,7 @@ rm -rf %{buildroot}
 
 mkdir -p %{buildroot}%{_datadir}/fonts/TTF/dejavu
 
-install -m 644 *.ttf %{buildroot}%{_datadir}/fonts/TTF/dejavu
+install -m 644 ttf/*.ttf %{buildroot}%{_datadir}/fonts/TTF/dejavu
 ttmkfdir %{buildroot}%{_datadir}/fonts/TTF/dejavu > %{buildroot}%{_datadir}/fonts/TTF/dejavu/fonts.dir
 ln -s fonts.dir %{buildroot}%{_datadir}/fonts/TTF/dejavu/fonts.scale
 
