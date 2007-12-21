@@ -8,6 +8,7 @@ License: Bitstream Vera Fonts Copyright
 Group: System/Fonts/True type
 URL: http://dejavu.sourceforge.net/
 Source0: http://prdownloads.sourceforge.net/dejavu/%{pkgname}-%{version}.tar.bz2
+BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 Requires(post): fontconfig 
 Requires(postun): fontconfig 
 BuildArch: noarch
