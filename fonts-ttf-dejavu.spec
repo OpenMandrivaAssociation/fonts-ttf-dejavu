@@ -2,7 +2,7 @@
 
 Summary: DejaVu ttf Fonts
 Name: fonts-ttf-dejavu
-Version: 2.23
+Version: 2.24
 Release: %mkrel 1
 License: Bitstream Vera Fonts Copyright
 Group: System/Fonts/True type
