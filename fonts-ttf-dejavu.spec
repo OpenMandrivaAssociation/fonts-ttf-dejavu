@@ -3,14 +3,12 @@
 Summary: DejaVu ttf Fonts
 Name: fonts-ttf-dejavu
 Version: 2.30
-Release: %mkrel 1
+Release: %mkrel 2
 License: Bitstream Vera Fonts Copyright
 Group: System/Fonts/True type
 URL: http://dejavu.sourceforge.net/
 Source0: http://prdownloads.sourceforge.net/dejavu/%{pkgname}-%{version}.tar.bz2
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
-Requires(post): fontconfig 
-Requires(postun): fontconfig 
 BuildArch: noarch
 BuildRequires: freetype-tools
 
@@ -43,14 +41,6 @@ ln -s ../../..%{_datadir}/fonts/TTF/dejavu \
 	%{buildroot}%{_sysconfdir}/X11/fontpath.d/ttf-dejavu:pri=50
 %clean
 rm -rf %{buildroot}
-
-%post
-fc-cache
-
-%postun
-if [ "$1" = "0" ]; then
-fc-cache
-fi
 
 %files
 %defattr(-,root,root,-)
