@@ -10,6 +10,7 @@ URL: http://dejavu.sourceforge.net/
 Source0: http://prdownloads.sourceforge.net/dejavu/%{pkgname}-%{version}.tar.bz2
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildArch: noarch
+BuildRequires: fontconfig
 BuildRequires: freetype-tools
 
 %description
