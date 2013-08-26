@@ -2,8 +2,8 @@
 
 Summary:	DejaVu ttf Fonts
 Name:		fonts-ttf-dejavu
-Version:	2.33
-Release:	5
+Version:	2.34
+Release:	1
 License:	Bitstream Vera Fonts Copyright
 Group:		System/Fonts/True type
 Url:		http://dejavu.sourceforge.net/
@@ -26,6 +26,7 @@ development".
 %setup -qn %{pkgname}-%{version}
 
 %build
+# (tpg) nothing to do here unless we decide to build fonts from sources
 
 %install
 mkdir -p %{buildroot}%{_datadir}/fonts/TTF/dejavu
