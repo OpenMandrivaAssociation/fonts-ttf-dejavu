@@ -2,8 +2,8 @@
 
 Summary:	DejaVu ttf Fonts
 Name:		fonts-ttf-dejavu
-Version:	2.35
-Release:	4
+Version:	2.37
+Release:	1
 License:	Bitstream Vera Fonts Copyright
 Group:		System/Fonts/True type
 Url:		http://dejavu.sourceforge.net/
@@ -40,7 +40,7 @@ ln -s ../../..%{_datadir}/fonts/TTF/dejavu \
 	%{buildroot}%{_sysconfdir}/X11/fontpath.d/ttf-dejavu:pri=50
 
 %files
-%doc README LICENSE AUTHORS NEWS BUGS *cover.txt
+%doc LICENSE AUTHORS NEWS BUGS *cover.txt
 %dir %{_datadir}/fonts/TTF/dejavu
 %{_datadir}/fonts/TTF/dejavu/*.ttf
 %verify(not mtime) %{_datadir}/fonts/TTF/dejavu/fonts.dir
