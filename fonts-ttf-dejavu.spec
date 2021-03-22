@@ -6,8 +6,8 @@ Version:	2.37
 Release:	3
 License:	Bitstream Vera Fonts Copyright
 Group:		System/Fonts/True type
-Url:		http://dejavu.sourceforge.net/
-Source0:	http://prdownloads.sourceforge.net/dejavu/%{pkgname}-%{version}.tar.bz2
+Url:		https://dejavu-fonts.github.io/
+Source0:	http://sourceforge.net/projects/dejavu/files/dejavu/%{version}/%{pkgname}-%{version}.tar.bz2
 BuildArch:	noarch
 BuildRequires:	fontconfig
 BuildRequires:	freetype-tools
@@ -23,7 +23,7 @@ maintaining the original look and feel through the process of collaborative
 development".
 
 %prep
-%setup -qn %{pkgname}-%{version}
+%autosetup -n %{pkgname}-%{version} -p1
 
 %build
 # (tpg) nothing to do here unless we decide to build fonts from sources
